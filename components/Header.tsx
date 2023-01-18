@@ -65,7 +65,7 @@ const Header = () => {
           align-items: center;
           width: 100%;
           padding: 1rem;
-          background-color: blue;
+          background-color: white;
           border-bottom: 1px solid #eaeaea;
           box-shadow: 0 0 15px 0 rgb(0 0 0 / 10%);
         }
