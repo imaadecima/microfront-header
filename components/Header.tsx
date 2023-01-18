@@ -101,8 +101,13 @@ const Header = () => {
           color: #666;
         }
 
+        a {
+          transition: color 200ms;
+        }
+
         a:hover {
           text-decoration: underline;
+          color: #0070f3;
         }
 
         .login {
