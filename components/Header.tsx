@@ -23,15 +23,15 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
   return (
     <>
       <div className='header'>
-        <section>
-          <article>
+        <div className='section'>
+          <div className='article'>
             <Link href='/'>
               <a>
                 <b>Remote Header</b>
               </a>
             </Link>
-          </article>
-          <article>
+          </div>
+          <div className='article'>
             <ul>
               <li>
                 <Link href='/item1'>
@@ -55,8 +55,8 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
                 </li>
               )}
             </ul>
-          </article>
-        </section>
+          </div>
+        </div>
         <div className='login'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -89,20 +89,20 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
           box-shadow: 0 0 15px 0 rgb(0 0 0 / 10%);
         }
 
-        section {
+        .section {
           display: flex;
           align-items: center;
           width: 100%;
         }
 
-        article {
+        .article {
           display: flex;
           align-items: center;
           justify-content: center;
           flex-direction: row;
         }
 
-        article b {
+        .article b {
           font-weight: 500;
         }
 
