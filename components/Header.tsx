@@ -9,7 +9,7 @@ const Header = ({ setCount }: IHeader) => {
   const handleClickButton = () => {
     if (typeof setCount === 'function') {
       // do something
-      setCount((prevState) => prevState++)
+      setCount((prevState) => prevState + 1)
     }
   }
 
