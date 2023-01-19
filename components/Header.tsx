@@ -1,7 +1,18 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 
-const Header = () => {
+interface IHeader {
+  setCount?: Dispatch<SetStateAction<number>>
+}
+
+const Header = ({ setCount }: IHeader) => {
+  const handleClickButton = () => {
+    if (typeof setCount === 'function') {
+      // do something
+      setCount(1)
+    }
+  }
+
   return (
     <>
       <header>
@@ -31,9 +42,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link href='/item4'>
-                  <a>Item 4</a>
-                </Link>
+                <button onClick={handleClickButton}>Incrementar contador</button>
               </li>
             </ul>
           </article>
@@ -99,6 +108,7 @@ const Header = () => {
           list-style: none;
           font-weight: 300;
           color: #666;
+          font-size: 1rem;
         }
 
         a {
@@ -120,6 +130,30 @@ const Header = () => {
         .login svg {
           display: flex;
           flex: 1;
+        }
+
+        button {
+          background-color: white;
+          border: 1px solid;
+          border-color: #eaeaea;
+          color: #666;
+          border-radius: 4px;
+          padding: 10px 15px;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+            Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+          cursor: pointer;
+          transition: all 200ms ease-in-out;
+          font-weight: 300;
+          font-size: 1rem;
+        }
+
+        button:hover {
+          border-color: black;
+          color: black;
+        }
+
+        button:active {
+          background-color: #eaeaea;
         }
       `}</style>
     </>
