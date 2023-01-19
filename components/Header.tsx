@@ -22,7 +22,7 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
 
   return (
     <>
-      <header>
+      <div className='header'>
         <section>
           <article>
             <Link href='/'>
@@ -74,9 +74,9 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
             </g>
           </svg>
         </div>
-      </header>
+      </div>
       <style jsx>{`
-        header {
+        .header {
           position: fixed;
           top: 0;
           left: 0;
