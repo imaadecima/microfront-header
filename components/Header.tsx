@@ -3,13 +3,20 @@ import React, { Dispatch, SetStateAction } from 'react'
 
 interface IHeader {
   setCount?: Dispatch<SetStateAction<number>>
+  count?: number
 }
 
-const Header = ({ setCount }: IHeader) => {
+const Header = ({ setCount, count = 0 }: IHeader) => {
   const handleClickButton = () => {
     if (typeof setCount === 'function') {
-      // do something
       setCount((prevState) => prevState + 1)
+    }
+  }
+
+  const handleClickButtonReset = () => {
+    if (typeof setCount === 'function') {
+      // do something
+      setCount(0)
     }
   }
 
@@ -37,13 +44,16 @@ const Header = ({ setCount }: IHeader) => {
                 </Link>
               </li>
               <li>
-                <Link href='/item3'>
-                  <a>Item 3</a>
-                </Link>
-              </li>
-              <li>
                 <button onClick={handleClickButton}>Incrementar contador</button>
               </li>
+              <li>
+                <button onClick={handleClickButtonReset}>Resetear</button>
+              </li>
+              {count === 10 && (
+                <li>
+                  <span>El contador es 10 y generó un re-render</span>
+                </li>
+              )}
             </ul>
           </article>
         </section>
@@ -154,6 +164,11 @@ const Header = ({ setCount }: IHeader) => {
 
         button:active {
           background-color: #eaeaea;
+        }
+
+        span {
+          font-weight: 500;
+          color: #388e3c;
         }
       `}</style>
     </>
