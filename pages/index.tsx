@@ -3,6 +3,20 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+const Menu = () => {
+  return (
+    <>
+      <p>Menu</p>
+      <style jsx>{`
+        p {
+          margin: 0.5rem 0;
+          text-align: center;
+        }
+      `}</style>
+    </>
+  )
+}
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -13,7 +27,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Header />
+        <Header menu={<Menu />} />
       </main>
     </div>
   )

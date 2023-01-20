@@ -1,12 +1,14 @@
 import Link from 'next/link'
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, isValidElement, ReactElement, useState } from 'react'
 
 interface IHeader {
   setCount?: Dispatch<SetStateAction<number>>
   count?: number
+  menu?: ReactElement
 }
 
-const Header = ({ setCount, count = 0 }: IHeader) => {
+const Header = ({ setCount, count = 0, menu }: IHeader) => {
+  const [showMenu, setShowMenu] = useState(false)
   const handleClickButton = () => {
     if (typeof setCount === 'function') {
       setCount((prevState) => prevState + 1)
@@ -18,6 +20,10 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
       // do something
       setCount(0)
     }
+  }
+
+  const handleShowMenu = () => {
+    setShowMenu((prevState) => !prevState)
   }
 
   return (
@@ -60,6 +66,7 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
             viewBox='0 0 24 24'
             width='38px'
             fill='#000000'
+            onClick={handleShowMenu}
           >
             <g>
               <rect fill='none' height='24' width='24' />
@@ -68,6 +75,7 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
               <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z' />
             </g>
           </svg>
+          {showMenu && isValidElement(menu) && <div className='menu'>{menu}</div>}
         </div>
       </div>
       <style jsx>{`
@@ -135,6 +143,8 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
         .login svg {
           display: flex;
           flex: 1;
+          user-select: none;
+          cursor: pointer;
         }
 
         button {
@@ -165,6 +175,18 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
           font-weight: 500;
           color: #388e3c;
         }
+
+        .menu {
+          position: absolute;
+          width: 280px;
+          top: 5rem;
+          right: 1rem;
+          border-radius: 4px;
+          background-color: white;
+          border: 1px solid #eaeaea;
+          box-shadow: 0px 2px 8px rgb(0 0 0 / 15;
+        }
+        
       `}</style>
     </>
   )
