@@ -34,20 +34,15 @@ const Header = ({ setCount, count = 0 }: IHeader) => {
           <div className='article'>
             <ul>
               <li>
-                <Link href='/item1'>
-                  <a>Item 1</a>
-                </Link>
-              </li>
-              <li>
-                <Link href='/item2'>
-                  <a>Item 2</a>
-                </Link>
-              </li>
-              <li>
                 <button onClick={handleClickButton}>Incrementar contador</button>
               </li>
               <li>
                 <button onClick={handleClickButtonReset}>Resetear</button>
+              </li>
+              <li>
+                <Link href='/item1'>
+                  <a>Item 1</a>
+                </Link>
               </li>
               {count === 10 && (
                 <li>
