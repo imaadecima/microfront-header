@@ -1,6 +1,7 @@
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf')
 
 module.exports = {
+  distDir: 'build',
   webpack(config, options) {
     config.plugins.push(
       new NextFederationPlugin({
@@ -9,6 +10,12 @@ module.exports = {
         exposes: {
           './header': './components/Header.tsx',
           './section': './components/Section.jsx',
+        },
+        shared: {
+          fakeLodash: {
+            import: 'lodash',
+            shareKey: 'lodash',
+          },
         },
         extraOptions: {
           exposePages: true, // `false` by default
