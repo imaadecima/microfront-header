@@ -10,7 +10,22 @@ module.exports = {
           './header': './components/Header.tsx',
           './section': './components/Section.jsx',
         },
-        shared: {},
+        shared: [
+          {
+            react: {
+              eager: true,
+              singleton: true,
+              requiredVersion: false,
+            },
+          },
+          {
+            'react-dom': {
+              eager: true,
+              singleton: true,
+              requiredVersion: false,
+            },
+          },
+        ],
         extraOptions: {
           exposePages: true, // `false` by default
           enableImageLoaderFix: true, // `false` by default
