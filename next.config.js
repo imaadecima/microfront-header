@@ -11,12 +11,6 @@ module.exports = {
           './header': './components/Header.tsx',
           './section': './components/Section.jsx',
         },
-        shared: {
-          fakeLodash: {
-            import: 'lodash',
-            shareKey: 'lodash',
-          },
-        },
         extraOptions: {
           exposePages: true, // `false` by default
           enableImageLoaderFix: true, // `false` by default
