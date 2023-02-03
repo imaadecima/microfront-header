@@ -11,13 +11,6 @@ module.exports = {
           './header': './components/Header.tsx',
           './section': './components/Section.jsx',
         },
-        extraOptions: {
-          exposePages: true, // `false` by default
-          enableImageLoaderFix: true, // `false` by default
-          enableUrlLoaderFix: true, // `false` by default
-          automaticAsyncBoundary: true, // `false` by default
-          skipSharingNextInternals: false, // `false` by default
-        },
       })
     )
 
