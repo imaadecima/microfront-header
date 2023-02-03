@@ -9,7 +9,7 @@ const Menu = () => {
       <p>Menu</p>
       <style jsx>{`
         p {
-          margin: 0.75rem 0;
+          margin: 0.5rem 0;
           text-align: center;
         }
       `}</style>
