@@ -87,7 +87,7 @@ const Header = ({ setCount, count = 0, menu }: IHeader) => {
           align-items: center;
           width: 100%;
           padding: 1rem;
-          background-color: #f1f1f1;
+          background-color: black;
           border-bottom: 1px solid #eaeaea;
           box-shadow: 0 0 15px 0 rgb(0 0 0 / 10%);
         }
